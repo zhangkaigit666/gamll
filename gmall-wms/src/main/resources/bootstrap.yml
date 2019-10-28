@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: owms-service
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: e227a273-a9ce-41a3-aefc-e1474ed568c3
+        #group:
