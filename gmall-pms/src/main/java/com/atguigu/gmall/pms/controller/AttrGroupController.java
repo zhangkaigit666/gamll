@@ -10,6 +10,7 @@ import com.atguigu.core.bean.Resp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,27 @@ import com.atguigu.gmall.pms.service.AttrGroupService;
 public class AttrGroupController {
     @Autowired
     private AttrGroupService attrGroupService;
+
+
+    @GetMapping("{catId}")
+    public Resp<PageVo> queryByCidPage(@PathVariable("catId")Long catId,QueryCondition condition){
+
+        PageVo pageVo =  this.attrGroupService.queryByCidPage(catId,condition);
+        return Resp.ok(pageVo);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 列表
